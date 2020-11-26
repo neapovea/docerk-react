@@ -1,12 +1,12 @@
 
 #comandos git para agregar código del curso
-git flow feature start 50_app-server-starter-code_visits_starter
+git flow feature start 51_assembling-dockerfile_visits
 git add .
-git commit -m "50_app-server-starter-code_visits_starter"
-git flow feature finish 50_app-server-starter-code_visits_starter
+git commit -m "51_assembling-dockerfile_visits"
+git flow feature finish 51_assembling-dockerfile_visits
 
-git flow release start 1.0.50.1
-git flow release finish -m "app-server-starter-code_visits_starter" 1.0.50.1
+git flow release start 1.0.51.1
+git flow release finish -m "assembling-dockerfile_visits" 1.0.51.1
 
 
 #Generar imagen con nombre neapovea/simpleweb
