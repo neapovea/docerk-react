@@ -1,12 +1,12 @@
 
 #comandos git para agregar código del curso
-git flow feature start 48_minimizing-cache-busting_simpleweb
+git flow feature start 50_app-server-starter-code_visits_starter
 git add .
-git commit -m "48_minimizing-cache-busting_simpleweb"
-git flow feature finish 48_minimizing-cache-busting_simpleweb
+git commit -m "50_app-server-starter-code_visits_starter"
+git flow feature finish 50_app-server-starter-code_visits_starter
 
-git flow release start 1.0.48.1
-git flow release finish -m "minimizing-cache-busting_simpleweb" 1.0.48.1
+git flow release start 1.0.50.1
+git flow release finish -m "app-server-starter-code_visits_starter" 1.0.50.1
 
 
 #Generar imagen con nombre neapovea/simpleweb
