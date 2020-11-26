@@ -1,10 +1,8 @@
+# Specify a base image
 FROM alpine
 
-# Step 2: Download and install dependency
+# Install some depenendencies
+RUN npm install
 
-RUN apk add --update gcc
-RUN apk add --update redis
-
-# Step 3: Tell the image what to do when it starts as container
-
-CMD ["redis-server"]
+# Default command
+CMD ["npm", "start"]
