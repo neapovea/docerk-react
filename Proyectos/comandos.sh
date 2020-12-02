@@ -2,15 +2,15 @@
 ## Git
 
 #comandos git para agregar código del curso
-git flow feature start 70_starting-container_frontend
+git flow feature start 75_shorthand-with-compose_frontend
 
 git add .
-git commit -m "70_starting-container_frontend"
-git flow feature finish 70_starting-container_frontend
+git commit -m "75_shorthand-with-compose_frontend"
+git flow feature finish 75_shorthand-with-compose_frontend
 
-git flow release start 1.0.70.1
+git flow release start 1.0.75.1
 export GIT_MERGE_AUTOEDIT=no
-git flow release finish -m "starting-container" 1.0.70.1
+git flow release finish -m "shorthand-with-compose" 1.0.75.1
 unset GIT_MERGE_AUTOEDIT
 
 git push --tags origin master develop
