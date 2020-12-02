@@ -2,13 +2,13 @@
 ## Git
 
 #comandos git para agregar código del curso
-git flow feature start 57_container-maintenance_visits
+git flow feature start 58_automatic-container-restarts_visits
 git add .
-git commit -m "57_container-maintenance_visits"
-git flow feature finish 57_container-maintenance_visits
+git commit -m "58_automatic-container-restarts_visits"
+git flow feature finish 58_automatic-container-restarts_visits
 
-git flow release start 1.0.57.1
-git flow release finish -m "container-maintenance" 1.0.57.1
+git flow release start 1.0.58.1
+git flow release finish -m "automatic-container-restarts" 1.0.58.1
 
 git push --tags origin master develop
 
