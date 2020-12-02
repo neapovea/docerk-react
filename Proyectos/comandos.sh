@@ -2,15 +2,15 @@
 ## Git
 
 #comandos git para agregar código del curso
-git flow feature start 64_more-project-generation_frontend
+git flow feature start 67_creating-dev-dockerfile_frontend
 
 git add .
-git commit -m "64_more-project-generation_frontend"
-git flow feature finish 64_more-project-generation_frontend
+git commit -m "67_creating-dev-dockerfile_frontend"
+git flow feature finish 67_creating-dev-dockerfile_frontend
 
-git flow release start 1.0.64.1
+git flow release start 1.0.67.1
 export GIT_MERGE_AUTOEDIT=no
-git flow release finish -m "more-project-generation" 1.0.64.1
+git flow release finish -m "creating-dev-dockerfile" 1.0.67.1
 unset GIT_MERGE_AUTOEDIT
 git push --tags origin master develop
 
