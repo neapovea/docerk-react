@@ -2,15 +2,15 @@
 ## Git
 
 #comandos git para agregar código del curso
-git flow feature start 81_docker-compose-running-tests_frontend
+git flow feature start 88_implementing-multi-step_frontend
 
 git add .
-git commit -m "81_docker-compose-running-tests_frontend"
-git flow feature finish 81_docker-compose-running-tests_frontend
+git commit -m "88_implementing-multi-step_frontend"
+git flow feature finish 88_implementing-multi-step_frontend
 
-git flow release start 1.0.81.1
+git flow release start 1.0.88.1
 export GIT_MERGE_AUTOEDIT=no
-git flow release finish -m "docker-compose-running-tests" 1.0.81.1
+git flow release finish -m "implementing-multi-step" 1.0.88.1
 unset GIT_MERGE_AUTOEDIT
 
 git push --tags origin master develop
