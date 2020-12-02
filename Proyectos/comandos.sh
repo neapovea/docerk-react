@@ -2,15 +2,15 @@
 ## Git
 
 #comandos git para agregar código del curso
-git flow feature start 76_overriding-dockerfile_frontend
+git flow feature start 81_docker-compose-running-tests_frontend
 
 git add .
-git commit -m "76_overriding-dockerfile_frontend"
-git flow feature finish 76_overriding-dockerfile_frontend
+git commit -m "81_docker-compose-running-tests_frontend"
+git flow feature finish 81_docker-compose-running-tests_frontend
 
-git flow release start 1.0.76.1
+git flow release start 1.0.81.1
 export GIT_MERGE_AUTOEDIT=no
-git flow release finish -m "overriding-dockerfile" 1.0.76.1
+git flow release finish -m "docker-compose-running-tests" 1.0.81.1
 unset GIT_MERGE_AUTOEDIT
 
 git push --tags origin master develop
