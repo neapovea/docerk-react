@@ -2,14 +2,16 @@
 ## Git
 
 #comandos git para agregar código del curso
-git flow feature start 58_automatic-container-restarts_visits
+git flow feature start 64_more-project-generation_frontend
+
 git add .
-git commit -m "58_automatic-container-restarts_visits"
-git flow feature finish 58_automatic-container-restarts_visits
+git commit -m "64_more-project-generation_frontend"
+git flow feature finish 64_more-project-generation_frontend
 
-git flow release start 1.0.58.1
-git flow release finish -m "automatic-container-restarts" 1.0.58.1
-
+git flow release start 1.0.64.1
+export GIT_MERGE_AUTOEDIT=no
+git flow release finish -m "more-project-generation" 1.0.64.1
+unset GIT_MERGE_AUTOEDIT
 git push --tags origin master develop
 
 ## Docker
@@ -32,6 +34,15 @@ sudo docker exec -it CONTANER_ID sh
 sudo docker-compose up #ejecutar contenedor
 sudo docker-compose up --build #generar y ejecutar contenedor
 sudo docker-compose up -d #ejecutar docker en background
+
+
+sudo docker-compose ps #muestra los docker levantados con el docker-compse
+#        Name                   Command           State           Ports
+#------------------------------------------------------------------------------
+#_frontend_node-app_1       docker-entrypoint.sh     Up      0.0.0.0:4001->8081/tc
+#                        npm start                        p
+#_frontend_redis-server_1   docker-entrypoint.sh     Up      6379/tcp
+#                        redis ...
 
 
 sudo docker-compose down
