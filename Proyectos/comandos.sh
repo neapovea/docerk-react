@@ -3,8 +3,8 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="76"
-COMENTARIO="overriding-dockerfile"
+VERSION="81"
+COMENTARIO="docker-compose-running-tests"
 NOMBRE_APP="frontend"
 
 #comandos git para agregar código del curso
@@ -15,7 +15,7 @@ git flow feature finish $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
 
 git flow release start 1.0.$VERSION.1
 export GIT_MERGE_AUTOEDIT=no
-git flow release finish -m $COMENTARIO 1.0.$VERSION.1
+git flow release finish -p -m $COMENTARIO 1.0.$VERSION.1
 unset GIT_MERGE_AUTOEDIT
 
 git push --tags origin master develop
@@ -46,8 +46,14 @@ sudo docker exec -it CONTANER_ID sh
 
 
 #arrancar docker con un fichero distinto al dockerfile
-
 sudo docker build -f Dockerfile.dev .
+
+#lanzar test sobre el contenedor generado
+sudo docker run CONTAINER_ID npm run test
+
+sudo docker run -it CONTAINER_ID npm run test #permite interacturar con el contenedor  y poder lanzar test o elegirlos
+
+
 
 
 #3-22-2020
