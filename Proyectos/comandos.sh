@@ -1,15 +1,18 @@
 
 ## Git
 
-#comandos git para agregar código del curso
-git flow feature start 70_starting-container_frontend
-git add .
-git commit -m "70_starting-container_frontend"
-git flow feature finish 70_starting-container_frontend
+#comando que se ejecuta una vez
+git config --global gitflow.feature.finish.no-ff TRUE
 
-git flow release start 1.0.70.1
+#comandos git para agregar código del curso
+git flow feature start 75_shorthand-with-compose_frontend
+git add .
+git commit -m "75_shorthand-with-compose_frontend"
+git flow feature finish 75_shorthand-with-compose_frontend
+
+git flow release start 1.0.75.1
 export GIT_MERGE_AUTOEDIT=no
-git flow release finish -m "starting-container" 1.0.70.1
+git flow release finish -m "starting-container" 1.0.75.1
 unset GIT_MERGE_AUTOEDIT
 
 git push --tags origin master develop
@@ -24,6 +27,15 @@ sudo docker run -p 8080:8080 neapovea/simpleweb
 
 #lanza contendor y lanza sh dentor del mismo
 sudo docker run -p  8080:8080 neapovea/simpleweb sh
+
+#arranchar con dockervolume docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image_id>
+
+# detectar cambios de fichero con node más rápido (componete chokidar
+#docker run -it -p 3000:3000 -v /app/node_modules -v ${PWD}:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+#volumnes
+  # -v VOLUMEN_LOCAL:VOLUMEN_NODE # en el ejmpleo mapea el directorio /app entero y sus subdirectorios
+  # -v VOLUMEN_NODE #para que no mapee el subdirestorio de /app/node_modules.
 
 
 #ejecutar sh dentro de unc ontendor ya lanzado
@@ -60,6 +72,10 @@ sudo docker-compose down
 sudo docker-compse
 
 
+#Problema con react App:
+##https://github.com/facebook/create-react-app/issues/8688
+##https://stackoverflow.com/questions/60790696/react-scripts-start-exiting-in-docker-foreground-cmd
+##hay que agregar stdin_open: true al docker-compse del componente web
 
 ## Node commmands
 
