@@ -1,18 +1,21 @@
 
 ## Git
-
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-#comandos git para agregar código del curso
-git flow feature start 75_shorthand-with-compose_frontend
-git add .
-git commit -m "75_shorthand-with-compose_frontend"
-git flow feature finish 75_shorthand-with-compose_frontend
+VERSION="76"
+COMENTARIO="overriding-dockerfile"
+NOMBRE_APP="frontend"
 
-git flow release start 1.0.75.1
+#comandos git para agregar código del curso
+git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
+git add .
+git commit -m $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
+git flow feature finish $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
+
+git flow release start 1.0.$VERSION.1
 export GIT_MERGE_AUTOEDIT=no
-git flow release finish -m "starting-container" 1.0.75.1
+git flow release finish -m $COMENTARIO 1.0.$VERSION.1
 unset GIT_MERGE_AUTOEDIT
 
 git push --tags origin master develop
