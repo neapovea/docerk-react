@@ -3,8 +3,8 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="81"
-COMENTARIO="docker-compose-running-tests"
+VERSION="88"
+COMENTARIO="implementing-multi-step(1)"
 NOMBRE_APP="frontend"
 
 #comandos git para agregar código del curso
@@ -54,6 +54,8 @@ sudo docker run CONTAINER_ID npm run test
 sudo docker run -it CONTAINER_ID npm run test #permite interacturar con el contenedor  y poder lanzar test o elegirlos
 
 
+#attach docker
+sudo docker attach CONTAINER_ID
 
 
 #3-22-2020
