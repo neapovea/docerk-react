@@ -1,0 +1,21 @@
+sudo: required
+language: generic
+##agreagdo según cambios en travisci
+
+#You can read up on the CI=true variable here:
+#  https://facebook.github.io/create-react-app/docs/running-tests#linux-macos-bash
+#
+#and enviornment variables in Docker here:
+#  https://docs.docker.com/engine/reference/run/#env-environment-variables
+
+services:
+  - docker
+
+before_install:
+  - docker build -t neapovea/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true neapovea/docker-react npm run test
+
+#anteriormente era el comando
+    #- docker run USERNAME/docker-react npm run test -- --coverage
