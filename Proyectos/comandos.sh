@@ -3,9 +3,9 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="88"
-COMENTARIO="implementing-multi-step(1)"
-NOMBRE_APP="frontend"
+VERSION="95"
+COMENTARIO="touch-more-travis"
+NOMBRE_APP="travis"
 
 #comandos git para agregar código del curso
 git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
