@@ -1,5 +1,8 @@
-sudo: required
+#deprecated #ssudo: required
 language: generic
+dist: xenial
+os: linux
+
 ##agreagdo según cambios en travisci
 
 #You can read up on the CI=true variable here:
