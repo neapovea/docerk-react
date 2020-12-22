@@ -3,8 +3,8 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="102"
-COMENTARIO="exposing-ports"
+VERSION="109"
+COMENTARIO="finished-code"
 NOMBRE_APP="frontend"
 
 #comandos git para agregar código del curso
