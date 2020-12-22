@@ -23,3 +23,16 @@ script:
 
 #anteriormente era el comando
     #- docker run USERNAME/docker-react npm run test -- --coverage
+
+
+#url en aws http://docker-env.eba-9tqc2xc2.us-east-2.elasticbeanstalk.com/
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'docker'
+  env: 'Docker-env'
+  #nombre dle paquete s3 generado para la aplicación
+  bucket_name: 'elasticbeanstalk-us-east-2-178264148919'
+  bucket_path: 'docker'
+  on:
+    branch: master
