@@ -4,8 +4,9 @@
 git config --global gitflow.feature.finish.no-ff TRUE
 
 VERSION="127"
-COMENTARIO="routing"
+COMENTARIO="agregar_datos_creacion_app"
 NOMBRE_APP="complex"
+REVISION="2"
 
 #comandos git para agregar código del curso
 git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
@@ -13,9 +14,9 @@ git add .
 git commit -m $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
 git flow feature finish $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
 
-git flow release start 1.0.$VERSION.1
+git flow release start 1.0.$VERSION.$REVISION
 export GIT_MERGE_AUTOEDIT=no
-git flow release finish -p -m $COMENTARIO 1.0.$VERSION.1
+git flow release finish -p -m $COMENTARIO 1.0.$VERSION.$REVISION
 unset GIT_MERGE_AUTOEDIT
 
 git push --tags origin master develop
