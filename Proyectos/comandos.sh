@@ -3,9 +3,9 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="109"
-COMENTARIO="finished-code"
-NOMBRE_APP="frontend"
+VERSION="116"
+COMENTARIO="worker-process"
+NOMBRE_APP="complex"
 
 #comandos git para agregar código del curso
 git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
