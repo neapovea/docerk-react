@@ -3,8 +3,8 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="145"
-COMENTARIO="nginx-connect-failed"
+VERSION="147"
+COMENTARIO="opening-websocket"
 NOMBRE_APP="complex"
 REVISION="1"
 
