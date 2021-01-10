@@ -3,8 +3,8 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="134"
-COMENTARIO="dockerizing-generic"
+VERSION="138"
+COMENTARIO="environment-variables"
 NOMBRE_APP="complex"
 REVISION="1"
 
