@@ -3,10 +3,10 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="127"
-COMENTARIO="agregar_datos_creacion_app"
+VERSION="131"
+COMENTARIO="dockerizing-react"
 NOMBRE_APP="complex"
-REVISION="2"
+REVISION="1"
 
 #comandos git para agregar código del curso
 git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
