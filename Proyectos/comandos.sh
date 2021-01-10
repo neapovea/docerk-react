@@ -3,8 +3,8 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="140"
-COMENTARIO="worker-and-client"
+VERSION="144"
+COMENTARIO="starting-up"
 NOMBRE_APP="complex"
 REVISION="1"
 
