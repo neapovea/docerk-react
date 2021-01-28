@@ -1,0 +1,27 @@
+#deprecated #ssudo: required
+language: generic
+dist: xenial
+os: linux
+
+services:
+  - docker
+
+before_install:
+  - cd Proyectos/complex
+  - docker build -t neapovea/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true neapovea/react-test npm test
+
+after_success:
+  - docker build -t neapovea/multi-client ./client
+  - docker build -t neapovea/multi-nginx ./nginx
+  - docker build -t neapovea/multi-server ./server
+  - docker build -t neapovea/multi-worker ./worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push neapovea/multi-client
+  - docker push neapovea/multi-nginx
+  - docker push neapovea/multi-server
+  - docker push neapovea/multi-worker
