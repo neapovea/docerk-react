@@ -9,20 +9,20 @@ services:
 
 before_install:
   - cd Proyectos/complex
-  - docker build -t stephengrider/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t neapovea/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true stephengrider/react-test npm test
+  - docker run -e CI=true neapovea/react-test npm test
 
 after_success:
-  - docker build -t stephengrider/multi-client ./client
-  - docker build -t stephengrider/multi-nginx ./nginx
-  - docker build -t stephengrider/multi-server ./server
-  - docker build -t stephengrider/multi-worker ./worker
+  - docker build -t neapovea/multi-client ./client
+  - docker build -t neapovea/multi-nginx ./nginx
+  - docker build -t neapovea/multi-server ./server
+  - docker build -t neapovea/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push stephengrider/multi-client
-  - docker push stephengrider/multi-nginx
-  - docker push stephengrider/multi-server
-  - docker push stephengrider/multi-worker
+  - docker push neapovea/multi-client
+  - docker push neapovea/multi-nginx
+  - docker push neapovea/multi-server
+  - docker push neapovea/multi-worker
