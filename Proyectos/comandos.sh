@@ -9,10 +9,10 @@ NOMBRE_APP="complex"
 REVISION="2"
 
 #comandos git para agregar código del curso
-git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
+git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP"_".$REVISION
 git add .
-git commit -m $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
-git flow feature finish $VERSION"_"$COMENTARIO"_"$NOMBRE_APP
+git commit -m $VERSION"_"$COMENTARIO"_"$NOMBRE_APP"_".$REVISION
+git flow feature finish $VERSION"_"$COMENTARIO"_"$NOMBRE_APP"_".$REVISION
 
 git flow release start 1.0.$VERSION.$REVISION
 export GIT_MERGE_AUTOEDIT=no
