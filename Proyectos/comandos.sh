@@ -6,7 +6,7 @@ git config --global gitflow.feature.finish.no-ff TRUE
 VERSION="153"
 COMENTARIO="cleaning-up"
 NOMBRE_APP="complex"
-REVISION="2"
+REVISION="3"
 
 #comandos git para agregar código del curso
 git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP"_".$REVISION
@@ -19,7 +19,11 @@ export GIT_MERGE_AUTOEDIT=no
 git flow release finish -p -m $COMENTARIO 1.0.$VERSION.$REVISION
 unset GIT_MERGE_AUTOEDIT
 
+
+
 git push --tags origin master develop
+
+git push --tags originGitHub master
 
 ## Docker
 
