@@ -6,7 +6,7 @@ git config --global gitflow.feature.finish.no-ff TRUE
 VERSION="153"
 COMENTARIO="cleaning-up"
 NOMBRE_APP="complex"
-REVISION="3"
+REVISION="4"
 
 #comandos git para agregar código del curso
 git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP"_".$REVISION
