@@ -3,38 +3,26 @@ language: generic
 dist: xenial
 os: linux
 
-##agreagdo según cambios en travisci
-
-#You can read up on the CI=true variable here:
-#  https://facebook.github.io/create-react-app/docs/running-tests#linux-macos-bash
-#
-#and enviornment variables in Docker here:
-#  https://docs.docker.com/engine/reference/run/#env-environment-variables
 
 services:
   - docker
 
 before_install:
-  - cd Proyectos/frontend
-  - docker build -t neapovea/docker-react -f Dockerfile.dev .
+  - cd Proyectos/complex
+  - docker build -t stephengrider/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true neapovea/docker-react npm run test
+  - docker run -e CI=true stephengrider/react-test npm test
 
-#anteriormente era el comando
-    #- docker run USERNAME/docker-react npm run test -- --coverage
-
-
-#url en aws http://docker-env.eba-9tqc2xc2.us-east-2.elasticbeanstalk.com/
-deploy:
-  provider: elasticbeanstalk
-  region: 'us-east-2'
-  app: 'docker'
-  env: 'Docker-env'
-  #nombre dle paquete s3 generado para la aplicación
-  bucket_name: 'elasticbeanstalk-us-east-2-178264148919'
-  bucket_path: 'docker'
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+after_success:
+  - docker build -t stephengrider/multi-client ./client
+  - docker build -t stephengrider/multi-nginx ./nginx
+  - docker build -t stephengrider/multi-server ./server
+  - docker build -t stephengrider/multi-worker ./worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push stephengrider/multi-client
+  - docker push stephengrider/multi-nginx
+  - docker push stephengrider/multi-server
+  - docker push stephengrider/multi-worker
