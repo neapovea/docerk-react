@@ -1,0 +1,40 @@
+#deprecated #ssudo: required
+language: generic
+dist: xenial
+os: linux
+
+##agreagdo según cambios en travisci
+
+#You can read up on the CI=true variable here:
+#  https://facebook.github.io/create-react-app/docs/running-tests#linux-macos-bash
+#
+#and enviornment variables in Docker here:
+#  https://docs.docker.com/engine/reference/run/#env-environment-variables
+
+services:
+  - docker
+
+before_install:
+  - cd Proyectos/frontend
+  - docker build -t neapovea/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true neapovea/docker-react npm run test
+
+    #anteriormente era el comando
+  #- docker run USERNAME/docker-react npm run test -- --coverage
+
+
+#url en aws http://docker-env.eba-9tqc2xc2.us-east-2.elasticbeanstalk.com/
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'docker'
+  env: 'Docker-env'
+  #nombre dle paquete s3 generado para la aplicación
+  bucket_name: 'elasticbeanstalk-us-east-2-178264148919'
+  bucket_path: 'docker'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

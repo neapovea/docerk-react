@@ -6,7 +6,7 @@ git config --global gitflow.feature.finish.no-ff TRUE
 VERSION="157"
 COMENTARIO="pushing-images"
 NOMBRE_APP="complex"
-REVISION="1"
+REVISION="3"
 
 #comandos git para agregar código del curso
 git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP"_".$REVISION
@@ -20,12 +20,18 @@ git flow release finish -p -m $COMENTARIO 1.0.$VERSION.$REVISION
 unset GIT_MERGE_AUTOEDIT
 
 
-
+###gyuardar cambios para el repo de gitlab donde está todo el codigo
 git push --tags origin master develop
 
+##enviar cambios para el github que esta configurado con el travis-ci, el travis.yaml hay que cambiarlo según el proyecto que se quiera subir
 git push --tags originGitHub master
 
+
 ## Docker
+
+#login en docker
+sudo docker login  ###pide usuario y contrasña del dockerhub, necesario hacerlo antes que nada para que peuda subir las imágnees docker al repo público.
+
 
 #Generar imagen con nombre neapovea/simpleweb
 sudo docker build -t neapovea/simpleweb .
