@@ -3,10 +3,10 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="153"
-COMENTARIO="cleaning-up"
+VERSION="157"
+COMENTARIO="pushing-images"
 NOMBRE_APP="complex"
-REVISION="4"
+REVISION="1"
 
 #comandos git para agregar código del curso
 git flow feature start $VERSION"_"$COMENTARIO"_"$NOMBRE_APP"_".$REVISION
