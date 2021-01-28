@@ -3,8 +3,8 @@
 #comando que se ejecuta una vez
 git config --global gitflow.feature.finish.no-ff TRUE
 
-VERSION="152"
-COMENTARIO="altering-nginx"
+VERSION="153"
+COMENTARIO="cleaning-up"
 NOMBRE_APP="complex"
 REVISION="1"
 
